@@ -1,0 +1,120 @@
+.micro-app-anchor {
+  position: sticky;
+  top: calc(var(--navbar-height) + 2rem);
+  z-index: 99;
+  max-width: var(--content-width, 740px);
+}
+
+.micro-app-anchor-content {
+  position: absolute;
+  inset-inline-start: calc(100% + 1rem);
+
+  min-width: 10rem;
+  max-width: 15rem;
+}
+
+.micro-app-anchor-header {
+  letter-spacing: .4px;
+  line-height: 28px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  margin-inline-start: 0.5rem;
+}
+
+.micro-app-anchor-wrapper {
+  position: relative;
+
+  max-height: 75vh;
+  margin: 0 0.5rem;
+  padding-left: 16px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  border-left: 1px solid var(--c-border);
+
+  overflow: hidden auto;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar-track-piece {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+.micro-app-anchor-marker {
+  content: " ";
+
+  position: absolute;
+  top: 0;
+  inset-inline-start: -8px;
+  z-index: 2;
+
+  width: 2px;
+  height: 1.7rem;
+
+  background: var(--c-brand);
+
+  transition: top var(--t-transform);
+  margin-inline-start: 0.5rem;
+}
+
+.micro-app-anchor-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.micro-app-anchor-link {
+  color: var(--c-text-lighter);
+  position: relative;
+
+  overflow: hidden;
+
+  max-width: 100%;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  &.active {
+    color: var(--c-text-accent);
+    font-weight: bold;
+  }
+}
+
+.micro-app-anchor-link.sidebar-item {
+  font-size: 14px;
+  padding: 0;
+  border-left: 0;
+
+  font-weight: normal;
+  display: block;
+  margin: 0;
+  line-height: inherit;
+  width: auto;
+  box-sizing: border-box;
+}
+
+.micro-app-anchor-list .micro-app-anchor-link:hover {
+  text-decoration: none
+}
+
+.micro-app-anchor-item {
+  position: relative;
+
+  box-sizing: border-box;
+
+  padding: 0 0.5rem;
+
+  list-style: none;
+
+  line-height: 1.7rem;
+  &:hover {
+    > .micro-app-anchor-link {
+      color: var(--c-text-accent);
+    }
+  }
+}

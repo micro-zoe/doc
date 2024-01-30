@@ -1,0 +1,59 @@
+.micro-tabs__nav-scroll {
+  overflow: hidden;
+}
+
+.micro-tabs__nav {
+  display: flex;
+  white-space: nowrap;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--c-border);
+  }
+}
+
+.micro-tabs__item {
+  padding: 0 20px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  line-height: 1.4;
+  font-weight: 500;
+  color: var(--c-text);
+  position: relative;
+  &:first-child {
+    padding-left: 0;
+  }
+}
+
+.micro-tabs__item.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--c-text-accent);
+  z-index: 1;
+}
+
+.micro-tabs__content {
+  overflow: hidden;
+  position: relative;
+}
+
+/* micro-tab-panel */
+.micro-tab-panel {
+  display: none;
+}
+
+.micro-tab-panel.active {
+  display: block;
+}
