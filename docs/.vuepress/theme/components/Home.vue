@@ -5,11 +5,13 @@ import {
   useSiteLocaleData,
 } from '@vuepress/client'
 import type { DefaultThemeHomePageFrontmatter } from '@vuepress/theme-default'
-import "../home/js/micro-app-loading.js"
-import "../home/js/iconfont.js"
+// import MicroAppLoading from '../home/components/microapploading.vue'
 
 const frontmatter = usePageFrontmatter<DefaultThemeHomePageFrontmatter>()
 const siteLocale = useSiteLocaleData()
+const base = siteLocale.value.base
+
+console.log('base', base)
 
 const heroText = computed(() => {
   if (frontmatter.value.heroText === null) {
@@ -42,61 +44,61 @@ const loadingConTwo = ref(true)
 
 
 onMounted(() => {
-  const observer1 = new IntersectionObserver(([{ intersectionRatio }]) => {
-    if (intersectionRatio <= 0) return
-    observer1.disconnect()
-    showContentOneImg.value = true
+  // const observer1 = new IntersectionObserver(([{ intersectionRatio }]) => {
+  //   if (intersectionRatio <= 0) return
+  //   observer1.disconnect()
+  //   showContentOneImg.value = true
 
-    setTimeout(() => { loadingConOne.value = false}, 1100)
+  //   setTimeout(() => { loadingConOne.value = false}, 1100)
 
-    // <micro-app-loading size='0.3' class="loading-logo"></micro-app-loading>
-    setTimeout(() => {
-      const myApp = document.createElement('micro-app')  as HTMLElement
-      myApp.setAttribute('name', 'my-app1')
-      myApp.setAttribute('disable-memory-router', 'true')
-      myApp.setAttribute('url', `https://zeroing.jd.com/micro-app/react17/`)
-      myApp.addEventListener('mounted', () => {
-        microAppConOne.value?.removeChild(microAppConOne.value.children[0])
-      })
-      microAppConOne.value?.appendChild(myApp)
-    }, 3000)
-  })
+  //   // <micro-app-loading size='0.3' class="loading-logo"></micro-app-loading>
+  //   setTimeout(() => {
+  //     const myApp = document.createElement('micro-app')  as HTMLElement
+  //     myApp.setAttribute('name', 'my-app1')
+  //     myApp.setAttribute('disable-memory-router', 'true')
+  //     myApp.setAttribute('url', `https://zeroing.jd.com/micro-app/react17/`)
+  //     myApp.addEventListener('mounted', () => {
+  //       microAppConOne.value?.removeChild(microAppConOne.value.children[0])
+  //     })
+  //     microAppConOne.value?.appendChild(myApp)
+  //   }, 3000)
+  // })
 
-  observer1.observe(contentOneImg.value as Element)
+  // observer1.observe(contentOneImg.value as Element)
 
-  const observer2 = new IntersectionObserver(([{ intersectionRatio }]) => {
-    if (intersectionRatio <= 0) return
-    observer2.disconnect()
-    showContentTwoImg.value = true
-  })
+  // const observer2 = new IntersectionObserver(([{ intersectionRatio }]) => {
+  //   if (intersectionRatio <= 0) return
+  //   observer2.disconnect()
+  //   showContentTwoImg.value = true
+  // })
 
-  observer2.observe(contentTwoImg1.value as Element)
+  // observer2.observe(contentTwoImg1.value as Element)
 
-  const observer3 = new IntersectionObserver(([{ intersectionRatio }]) => {
-    if (intersectionRatio <= 0) return
-    observer3.disconnect()
-    showContentTwoImg2.value = true
+  // const observer3 = new IntersectionObserver(([{ intersectionRatio }]) => {
+  //   if (intersectionRatio <= 0) return
+  //   observer3.disconnect()
+  //   showContentTwoImg2.value = true
 
-    setTimeout(() => { loadingConTwo.value = false }, 1100)
+  //   setTimeout(() => { loadingConTwo.value = false }, 1100)
 
-    setTimeout(() => {
-      const myApp = document.createElement('micro-app')
-      myApp.setAttribute('name', 'my-app2')
-      myApp.setAttribute('url', `https://zeroing.jd.com/micro-app/react17/`)
-      myApp.setAttribute('disable-memory-router', 'true')
-      myApp.addEventListener('mounted', () => {
-        microAppConTwo.value?.removeChild(microAppConTwo.value?.children[0])
-      })
-      microAppConTwo.value?.appendChild(myApp)
-    }, 3000);
-  })
-  observer3.observe(contentTwoImg2.value as Element)
+  //   setTimeout(() => {
+  //     const myApp = document.createElement('micro-app')
+  //     myApp.setAttribute('name', 'my-app2')
+  //     myApp.setAttribute('url', `https://zeroing.jd.com/micro-app/react17/`)
+  //     myApp.setAttribute('disable-memory-router', 'true')
+  //     myApp.addEventListener('mounted', () => {
+  //       microAppConTwo.value?.removeChild(microAppConTwo.value?.children[0])
+  //     })
+  //     microAppConTwo.value?.appendChild(myApp)
+  //   }, 3000);
+  // })
+  // observer3.observe(contentTwoImg2.value as Element)
 
-  onBeforeUnmount(() => {
-    observer1.disconnect()
-    observer2.disconnect()
-    observer3.disconnect()
-  })
+  // onBeforeUnmount(() => {
+  //   observer1.disconnect()
+  //   observer2.disconnect()
+  //   observer3.disconnect()
+  // })
 })
 </script>
 
@@ -111,10 +113,10 @@ onMounted(() => {
           </a>
         </div>
         <nav class='header-nav'>
-          <a class='header-nav-title' href="/zh/">文档</a>
-          <a class='header-nav-title' href="/v0/zh/">0.x文档</a>
+          <a class='header-nav-title' :href="base + 'zh/'">文档</a>
+          <a class='header-nav-title' :href="base + 'v0/zh/'">0.x文档</a>
           <a class='header-nav-title' href="https://zeroing.jd.com/micro-app/demo/" target="blank">示例</a>
-          <a class='header-nav-title' href="/zh/micro-app-devtools">Micro-App-DevTools</a>
+          <a class='header-nav-title' :href="base + 'zh/micro-app-devtools'">Micro-App-DevTools</a>
           <a class='header-nav-title' href="https://github.com/micro-zoe/micro-app" target="blank"><img
               class='github-icon' src="../home/assets/github-logo.png" alt="github"></a>
         </nav>
@@ -123,7 +125,7 @@ onMounted(() => {
         <div v-if="heroText" class='introduce-title'>{{ heroText }}</div>
         <p v-if="tagline" class='introduce-desc'>{{ tagline }}</p>
         <div class="introduce-btn-list">
-          <a href="/zh/" class='btn-start'>开始使用</a>
+          <a :href="base + 'zh/'" class='btn-start'>开始使用</a>
           <a href="https://zeroing.jd.com/micro-app/demo/" class='btn-coding' target="blank">在线案例</a>
         </div>
       </section>
@@ -158,7 +160,7 @@ onMounted(() => {
             src="../home/assets/arrow-right.png" alt="">
           <div class='micro-app-con micro-app-con-one' :class="{ 'micro-app-con-show': showContentOneImg }"
             ref="microAppConOne">
-            <micro-app-loading size='0.3' class="loading-logo" :class="{ hidden: loadingConOne }"></micro-app-loading>
+            <!-- <micro-app-loading size='0.3' class="loading-logo" :class="{ hidden: loadingConOne }"></micro-app-loading> -->
           </div>
         </div>
       </section>
@@ -192,59 +194,45 @@ onMounted(() => {
         <div class="ability-list-cont">
           <div class="ability-item">
             <div class="ability-item-icon-con">
-              <svg class="icon ability-icon-sandbox" aria-hidden="true">
-                <use xlink:href="#icon-sandbox"></use>
-              </svg>
+              <span class="microdocs icon-codesandbox" />
             </div>
             <h4>JS沙箱</h4>
           </div>
           <div class="ability-item">
             <div class="ability-item-icon-con ability-item-icon-css">
-              <svg class="icon ability-icon-css" aria-hidden="true">
-                <use xlink:href="#icon-css"></use>
-              </svg>
-              <svg class="icon ability-icon-css" aria-hidden="true">
-                <use xlink:href="#icon-css"></use>
-              </svg>
+              <span class="microdocs icon-css ability-icon-css" />
+              <span class="microdocs icon-css ability-icon-css" />
             </div>
             <h4>样式隔离</h4>
           </div>
           <div class="ability-item">
             <div class="ability-item-icon-con ability-item-icon-element">
-              <svg class="icon ability-icon-element" aria-hidden="true">
-                <use xlink:href="#icon-element"></use>
-              </svg>
+              <span class="microdocs icon-element" />
             </div>
             <h4>元素隔离</h4>
           </div>
           <div class="ability-item">
             <div class="ability-item-icon-con ability-item-icon-tongxun">
-              <svg class="icon ability-icon-tongxun" aria-hidden="true">
-                <use xlink:href="#icon-tongxun"></use>
-              </svg>
+              <span class="microdocs icon-tongxun" />
             </div>
             <h4>数据通信</h4>
           </div>
           <div class="ability-item">
             <div class="ability-item-icon-con ability-item-icon-plugin">
-              <svg class="icon ability-icon-plugin" aria-hidden="true">
-                <use xlink:href="#icon-plugin"></use>
-              </svg>
+              <span class="microdocs icon-plugin" />
             </div>
             <h4>插件系统</h4>
           </div>
           <div class="ability-item">
             <div class="ability-item-icon-con ability-item-icon-prefetch">
-              <svg class="icon ability-icon-prefetch" aria-hidden="true">
-                <use xlink:href="#icon-prefetch"></use>
-              </svg>
+              <span class="microdocs icon-prefetch" />
             </div>
             <h4>预加载</h4>
           </div>
         </div>
       </section>
       <div class="content-thrid-btn">
-        <a href="/zh/" class='btn-start'>快速开始</a>
+        <a :href="base + 'zh/'" class='btn-start'>快速开始</a>
       </div>
     </section>
     <footer class="footer">
@@ -265,8 +253,10 @@ onMounted(() => {
           </dd>
         </dl>
       </div>
-  </footer>
-</main></template>
+    </footer>
+  </main>
+</template>
 
 <style src="../home/css/index.css" scoped></style>
 <style src="../home/css/animation.css" scoped></style>
+<style src="../home/fonts/iconfont.css" scoped></style>

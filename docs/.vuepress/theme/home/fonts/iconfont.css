@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'microdocs'; /* Project id 4428900 */
+  src: url('iconfont.woff2?t=1706690524056') format('woff2'),
+    url('iconfont.woff?t=1706690524056') format('woff'),
+    url('iconfont.ttf?t=1706690524056') format('truetype'),
+    url('iconfont.svg?t=1706690524056#microdocs') format('svg');
+}
+
+.microdocs {
+  font-family: 'microdocs' !important;
+  font-size: 40px;
+  font-style: normal;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-plugin:before {
+  content: '\e75b';
+}
+
+.icon-prefetch:before {
+  content: '\e60d';
+}
+
+.icon-tongxun:before {
+  content: '\e6e1';
+}
+
+/* .icon-light-component-uia-find-element:before { */
+.icon-element:before {
+  content: '\e79c';
+}
+
+.icon-css:before {
+  content: '\e605';
+}
+
+.icon-codesandbox:before {
+  content: '\e600';
+}

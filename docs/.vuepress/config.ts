@@ -16,7 +16,15 @@ export default defineUserConfig({
   title: 'MicroApp',
   description: '一款简约、高效、功能强大的微前端框架',
   head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
-  bundler: viteBundler(),
+  bundler: viteBundler({
+    vuePluginOptions: {
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => tag.startsWith('micro-app')
+        }
+      }
+    }
+  }),
   base: '/micro-app-docs/',
   theme: microAppTheme({
     logo: '/images/logo.png',

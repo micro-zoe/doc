@@ -1,7 +1,8 @@
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
-  font-family: -apple-system, BlinkMacSystemFont, Tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Tahoma, Arial,
+    'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
   width: 100%;
   overflow-x: hidden;
 }
@@ -14,7 +15,9 @@ a {
   text-decoration: none;
 }
 
-dl, dd, dt {
+dl,
+dd,
+dt {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -37,7 +40,12 @@ dl, dd, dt {
   position: relative;
   height: 1200px;
   width: 100vw;
-  background-image: linear-gradient(117deg, #6B46E3 0%, #5264EE 50%, #55A0EB 100%);
+  background-image: linear-gradient(
+    117deg,
+    #6b46e3 0%,
+    #5264ee 50%,
+    #55a0eb 100%
+  );
   overflow: hidden;
 }
 
@@ -47,7 +55,7 @@ dl, dd, dt {
   top: 85%;
   width: 100%;
   height: 350px;
-  background: #F8FAFF;
+  background: #f8faff;
   transform: skewY(-7deg);
   z-index: 4;
 }
@@ -86,7 +94,7 @@ dl, dd, dt {
 }
 
 .logo-con .logo-title {
-  color: #FFF;
+  color: #fff;
   font-weight: bold;
   font-style: italic;
   font-size: 16px;
@@ -131,32 +139,32 @@ dl, dd, dt {
   font-size: 40px;
   letter-spacing: 0;
   -webkit-font-smoothing: auto;
-  animation: title-show .6s 2.4s forwards;
+  animation: title-show 0.6s 2.4s forwards;
   opacity: 0;
 }
 
 .introduce .introduce-desc {
   font-size: 24px;
-  color: #FFF;
+  color: #fff;
   letter-spacing: 0;
-  animation: title-show .6s 2.6s forwards;
+  animation: title-show 0.6s 2.6s forwards;
   opacity: 0;
 }
 
 .introduce-btn-list {
   margin-top: 30px;
-  animation: title-show .6s 2.8s forwards;
+  animation: title-show 0.6s 2.8s forwards;
   opacity: 0;
 }
 
 @keyframes title-show {
   0% {
     opacity: 0;
-    transform: translateX(-200px)
+    transform: translateX(-200px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0)
+    transform: translateY(0);
   }
 }
 
@@ -174,7 +182,7 @@ dl, dd, dt {
 }
 
 .introduce .btn-start {
-  background: #00DAA8;
+  background: #00daa8;
 }
 
 .introduce .btn-coding {
@@ -254,7 +262,7 @@ dl, dd, dt {
 .content-common {
   width: 86vw;
   background: #fff;
-  box-shadow: 0 4px 30px 0 rgba(0, 0, 0, .1);
+  box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   margin: 120px auto 0;
   box-sizing: border-box;
@@ -282,17 +290,17 @@ dl, dd, dt {
 }
 
 .content-one-img-show {
-  animation: one-img-show .6s .2s linear forwards;
+  animation: one-img-show 0.6s 0.2s linear forwards;
 }
 
 @keyframes one-img-show {
   0% {
     opacity: 0;
-    transform: translateY(-20px)
+    transform: translateY(-20px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0)
+    transform: translateY(0);
   }
 }
 
@@ -303,7 +311,7 @@ dl, dd, dt {
 }
 
 .content-common-arrow-right-show {
-  animation: arrow-right-show .6s .6s ease-out forwards;
+  animation: arrow-right-show 0.6s 0.6s ease-out forwards;
 }
 
 @keyframes arrow-right-show {
@@ -336,7 +344,7 @@ dl, dd, dt {
 }
 
 .micro-app-con-show {
-  animation: micro-app-con-show-move .4s .6s linear forwards;
+  animation: micro-app-con-show-move 0.4s 0.6s linear forwards;
 }
 
 @keyframes micro-app-con-show-move {
@@ -364,17 +372,17 @@ dl, dd, dt {
 }
 
 .content-two-img-con-show {
-  animation: two-img-con-move .6s .2s linear forwards;
+  animation: two-img-con-move 0.6s 0.2s linear forwards;
 }
 
 @keyframes two-img-con-move {
   0% {
     opacity: 0;
-    transform: translateY(-20px)
+    transform: translateY(-20px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0)
+    transform: translateY(0);
   }
 }
 
@@ -422,7 +430,7 @@ dl, dd, dt {
 }
 
 .footer-content a:hover {
-  color: #5264EE;
+  color: #5264ee;
   text-decoration: underline;
 }
 
@@ -507,9 +515,8 @@ dl, dd, dt {
   background-color: #45d0de;
 }
 
-.ability-icon-css {
-  height: 34px;
-  width: 34px;
+.ability-item .icon-css {
+  font-size: 34px;
 }
 
 .ability-icon-css:nth-child(1) {
@@ -567,5 +574,5 @@ dl, dd, dt {
   border-radius: 20px;
   cursor: pointer;
   user-select: none;
-  background: #00DAA8;;
+  background: #00daa8;
 }
