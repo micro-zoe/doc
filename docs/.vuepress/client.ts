@@ -1,5 +1,5 @@
 import { defineClientConfig } from '@vuepress/client'
-// import Layout from './theme/components/SidebarAnchor.vue'
+import Layout from './theme/components/SidebarAnchor.vue'
 import HomeLayout from './theme/components/Home.vue'
 // import microApp from '@micro-zoe/micro-app'
 
@@ -7,7 +7,7 @@ import HomeLayout from './theme/components/Home.vue'
 
 export default defineClientConfig({
   layouts: {
-    // Layout,
+    Layout,
     HomeLayout
   }
 })
