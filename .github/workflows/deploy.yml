@@ -16,6 +16,9 @@ jobs:
         with:
           node-version: 18
           cache: yarn
+      - uses: webfactory/ssh-agent@v0.5.0
+        with:
+          ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build VuePress
