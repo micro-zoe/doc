@@ -1,5 +1,5 @@
 import { defineUserConfig } from 'vuepress'
-import type { Plugin } from '@vuepress/core';
+import type { Plugin } from '@vuepress/core'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { getDirname, path } from '@vuepress/utils'
 // import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
@@ -15,10 +15,9 @@ export default defineUserConfig({
   lang: 'zh-CN',
   title: 'MicroApp',
   description: '一款简约、高效、功能强大的微前端框架',
-  head: [
-    ['link', { rel: 'icon', href: '/images/logo.png' }]
-  ],
+  head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
   bundler: viteBundler(),
+  base: '/micro-app-docs/',
   theme: microAppTheme({
     logo: '/images/logo.png',
     colorMode: 'light',
@@ -49,7 +48,7 @@ export default defineUserConfig({
           '这里什么都没有',
           '我们怎么到这来了？',
           '这是一个 404 页面',
-          '看起来我们进入了错误的链接',
+          '看起来我们进入了错误的链接'
         ],
         backToHome: '返回首页',
         // a11y
@@ -58,14 +57,14 @@ export default defineUserConfig({
         toggleSidebar: '切换侧边栏',
         // anchor
         anchorToc: '本页内容'
-      },
+      }
     }
   }),
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: 'MicroApp',
-    },
+      title: 'MicroApp'
+    }
   },
   plugins: [
     // /** @see: https://vuepress.qbb.sh/clipboard/ */
@@ -92,9 +91,9 @@ export default defineUserConfig({
       type: 'note',
       locales: {
         '/': {
-          defaultInfo: 'Note',
-        },
-      },
-    }),
+          defaultInfo: 'Note'
+        }
+      }
+    })
   ]
 })
