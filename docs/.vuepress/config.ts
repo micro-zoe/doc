@@ -2,7 +2,7 @@ import { defineUserConfig } from 'vuepress'
 import type { Plugin } from '@vuepress/core'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { getDirname, path } from '@vuepress/utils'
-// import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { containerPlugin } from '@vuepress/plugin-container'
 // import { clipboardPlugin } from 'vuepress-plugin-clipboard'
 // import fullTextSearchPlugin from "vuepress-plugin-full-text-search2"
@@ -14,8 +14,9 @@ const __dirname = getDirname(import.meta.url)
 export default defineUserConfig({
   lang: 'zh-CN',
   title: 'MicroApp',
+  base: '/micro-app-docs/',
   description: '一款简约、高效、功能强大的微前端框架',
-  head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
+  head: [['link', { rel: 'icon', href: '/micro-app-docs/images/logo.png' }]],
   bundler: viteBundler({
     vuePluginOptions: {
       template: {
@@ -25,7 +26,6 @@ export default defineUserConfig({
       }
     }
   }),
-  base: '/micro-app-docs/',
   theme: microAppTheme({
     logo: '/images/logo.png',
     colorMode: 'light',
@@ -80,13 +80,13 @@ export default defineUserConfig({
     //   staticIcon: true,
     //   align: 'top',
     // }) as Plugin,
-    // registerComponentsPlugin({
-    //   // 组件通过异步方式加载
-    //   components: {
-    //     Tabs: path.resolve(__dirname, './components/Tabs.tsx'),
-    //     TabPanel: path.resolve(__dirname, './components/TabPanel.vue')
-    //   },
-    // }),
+    registerComponentsPlugin({
+      // 组件通过异步方式加载
+      components: {
+        Tabs: path.resolve(__dirname, './components/Tabs.tsx'),
+        TabPanel: path.resolve(__dirname, './components/TabPanel.vue')
+      }
+    }),
     // fullTextSearchPlugin({
     //   locales: {
     //     '/': {

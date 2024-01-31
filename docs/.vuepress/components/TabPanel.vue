@@ -1,9 +1,6 @@
 <template>
-  <div
-    class="micro-tab-panel"
-    :class="{active}"
-  >
-    <slot/>
+  <div class="micro-tab-panel" :class="{ active }">
+    <slot />
   </div>
 </template>
 

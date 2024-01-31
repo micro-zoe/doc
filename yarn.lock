@@ -603,6 +603,13 @@
   dependencies:
     prismjs "^1.29.0"
 
+"@vuepress/plugin-register-components@^2.0.0-rc.3":
+  version "2.0.0-rc.3"
+  resolved "https://registry.npmjs.org/@vuepress/plugin-register-components/-/plugin-register-components-2.0.0-rc.3.tgz#4226cd292dccab4bdff6ebbeb1a6c3dc02962631"
+  integrity sha512-l7tLwcgjV54T8ObF1cpgg9qWtKuaF9Dru14aHFeXxM2f7I1AjmAGFXHbBEMOb781HMRi32LYCwodsTahAn3uqg==
+  dependencies:
+    chokidar "^3.5.3"
+
 "@vuepress/plugin-theme-data@2.0.0-rc.1":
   version "2.0.0-rc.1"
   resolved "https://registry.npmjs.org/@vuepress/plugin-theme-data/-/plugin-theme-data-2.0.0-rc.1.tgz#46d0deebd8d984aafcb00320cde988d58256a1ac"
