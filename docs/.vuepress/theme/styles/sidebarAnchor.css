@@ -1,7 +1,7 @@
 .micro-app-anchor {
   position: sticky;
   top: calc(var(--navbar-height) + 2rem);
-  z-index: 99;
+  z-index: 1;
   max-width: var(--content-width, 740px);
 }
 
@@ -14,7 +14,7 @@
 }
 
 .micro-app-anchor-header {
-  letter-spacing: .4px;
+  letter-spacing: 0.4px;
   line-height: 28px;
   font-size: 13px;
   font-weight: 600;
@@ -47,7 +47,7 @@
 }
 
 .micro-app-anchor-marker {
-  content: " ";
+  content: ' ';
 
   position: absolute;
   top: 0;
@@ -99,7 +99,7 @@
 }
 
 .micro-app-anchor-list .micro-app-anchor-link:hover {
-  text-decoration: none
+  text-decoration: none;
 }
 
 .micro-app-anchor-item {

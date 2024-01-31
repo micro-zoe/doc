@@ -5,7 +5,7 @@ import { getDirname, path } from '@vuepress/utils'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { containerPlugin } from '@vuepress/plugin-container'
 // import { clipboardPlugin } from 'vuepress-plugin-clipboard'
-// import fullTextSearchPlugin from "vuepress-plugin-full-text-search2"
+import fullTextSearchPlugin from 'vuepress-plugin-full-text-search2'
 import microAppTheme from './theme'
 import { navbar as navbarZh, sidebarZh } from './configs'
 
@@ -87,13 +87,13 @@ export default defineUserConfig({
         TabPanel: path.resolve(__dirname, './components/TabPanel.vue')
       }
     }),
-    // fullTextSearchPlugin({
-    //   locales: {
-    //     '/': {
-    //       placeholder: '搜索',
-    //     },
-    //   },
-    // }),
+    fullTextSearchPlugin({
+      locales: {
+        '/': {
+          placeholder: '搜索'
+        }
+      }
+    }),
     /** @see: https://vuepress.github.io/zh/reference/plugin/container.html */
     containerPlugin({
       type: 'note',

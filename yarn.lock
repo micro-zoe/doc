@@ -489,7 +489,7 @@
     envinfo "^7.11.0"
     esbuild "~0.19.12"
 
-"@vuepress/client@2.0.0-rc.2":
+"@vuepress/client@2.0.0-rc.2", "@vuepress/client@^2.0.0-beta.29":
   version "2.0.0-rc.2"
   resolved "https://registry.npmjs.org/@vuepress/client/-/client-2.0.0-rc.2.tgz#a292fac739284726da4103f4f9ce2bdc58bd8f57"
   integrity sha512-gQ4CfBhzWYOCW4OcAUd6S8Jr9m/8UkZZuN/70t12GltbX/cdm6zrGnf89GiVjgvoK8+OYoc7luoBuWbyc/X5sg==
@@ -500,7 +500,7 @@
     vue "^3.4.15"
     vue-router "^4.2.5"
 
-"@vuepress/core@2.0.0-rc.2":
+"@vuepress/core@2.0.0-rc.2", "@vuepress/core@^2.0.0-0":
   version "2.0.0-rc.2"
   resolved "https://registry.npmjs.org/@vuepress/core/-/core-2.0.0-rc.2.tgz#fb6f9a9786b77db02efd1c558439eda79f16e74d"
   integrity sha512-C/bHG0y+v5oeCrfaesy2yFa0dyCah05g1w7vArZk8ABsVECjZKAC5/ev39UFQm2dCdNzsj2E3KgLIxYWqpcKeg==
@@ -645,7 +645,7 @@
     vue "^3.4.15"
     vue-router "^4.2.5"
 
-"@vuepress/utils@2.0.0-rc.2":
+"@vuepress/utils@2.0.0-rc.2", "@vuepress/utils@^2.0.0-0":
   version "2.0.0-rc.2"
   resolved "https://registry.npmjs.org/@vuepress/utils/-/utils-2.0.0-rc.2.tgz#585d2cd4397a1fc9206c76f0f10e23c1161a84c4"
   integrity sha512-g93yFJKtztpdXm4XyOIQ9QcUrKuvuWizvH3qWDQ5/WKlxa6VqE7nVNPlkudgGUIc7Bl4AGrlHcmgvkwaNoMcfA==
@@ -758,7 +758,7 @@ chalk@^5.3.0:
   resolved "https://registry.npmjs.org/chalk/-/chalk-5.3.0.tgz#67c20a7ebef70e7f3970a01f90fa210cb6860385"
   integrity sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==
 
-"chokidar@>=3.0.0 <4.0.0", chokidar@^3.5.3:
+"chokidar@>=3.0.0 <4.0.0", chokidar@^3.5.2, chokidar@^3.5.3:
   version "3.5.3"
   resolved "https://registry.npmjs.org/chokidar/-/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"
   integrity sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==
@@ -811,6 +811,36 @@ debug@^4.3.4:
   dependencies:
     ms "2.1.2"
 
+dom-serializer@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/dom-serializer/-/dom-serializer-2.0.0.tgz#e41b802e1eedf9f6cae183ce5e622d789d7d8e53"
+  integrity sha512-wIkAryiqt/nV5EQKqQpo3SToSOV9J0DnbJqwK7Wv/Trc92zIAYZ4FlMu+JPFW1DfGFt81ZTCGgDEabffXeLyJg==
+  dependencies:
+    domelementtype "^2.3.0"
+    domhandler "^5.0.2"
+    entities "^4.2.0"
+
+domelementtype@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.npmjs.org/domelementtype/-/domelementtype-2.3.0.tgz#5c45e8e869952626331d7aab326d01daf65d589d"
+  integrity sha512-OLETBj6w0OsagBwdXnPdN0cnMfF9opN69co+7ZrbfPGrdpPVNBUj02spi6B1N7wChLQiPn4CSH/zJvXw56gmHw==
+
+domhandler@^5.0.2, domhandler@^5.0.3:
+  version "5.0.3"
+  resolved "https://registry.npmjs.org/domhandler/-/domhandler-5.0.3.tgz#cc385f7f751f1d1fc650c21374804254538c7d31"
+  integrity sha512-cgwlv/1iFQiFnU96XXgROh8xTeetsnJiDsTc7TYCLFd9+/WNkIqPTxiM/8pSd8VIrhXGTf1Ny1q1hquVqDJB5w==
+  dependencies:
+    domelementtype "^2.3.0"
+
+domutils@^3.0.1:
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/domutils/-/domutils-3.1.0.tgz#c47f551278d3dc4b0b1ab8cbb42d751a6f0d824e"
+  integrity sha512-H78uMmQtI2AhgDJjWeQmHwJJ2bLPD3GMmO7Zja/ZZh84wkm+4ut+IUnUdRa8uCGX88DiVx1j6FRe1XfxEgjEZA==
+  dependencies:
+    dom-serializer "^2.0.0"
+    domelementtype "^2.3.0"
+    domhandler "^5.0.3"
+
 electron-to-chromium@^1.4.648:
   version "1.4.650"
   resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.650.tgz#b38ef9de16991b9f7b924246770576ab91ab3d64"
@@ -821,7 +851,7 @@ emoji-regex@^10.3.0:
   resolved "https://registry.npmjs.org/emoji-regex/-/emoji-regex-10.3.0.tgz#76998b9268409eb3dae3de989254d456e70cfe23"
   integrity sha512-QpLs9D9v9kArv4lfDEgg1X/gN5XLnf/A6l9cs8SPZLRZR3ZkY9+kwIQTxm+fsSej5UMYGE8fdoaZVIBlqG0XTw==
 
-entities@^4.4.0, entities@^4.5.0:
+entities@^4.2.0, entities@^4.4.0, entities@^4.5.0:
   version "4.5.0"
   resolved "https://registry.npmjs.org/entities/-/entities-4.5.0.tgz#5d268ea5e7113ec74c4d033b79ea5a35a488fb48"
   integrity sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==
@@ -989,6 +1019,16 @@ hash-sum@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/hash-sum/-/hash-sum-2.0.0.tgz#81d01bb5de8ea4a214ad5d6ead1b523460b0b45a"
   integrity sha512-WdZTbAByD+pHfl/g9QSsBIIwy8IT+EsPiKDs0KNX+zSHhdDLFKdZu0BQHljvO+0QI/BasbMSUa8wYNCZTvhslg==
+
+htmlparser2@^8.0.0:
+  version "8.0.2"
+  resolved "https://registry.npmjs.org/htmlparser2/-/htmlparser2-8.0.2.tgz#f002151705b383e62433b5cf466f5b716edaec21"
+  integrity sha512-GYdjWKDkbRLkZ5geuHs5NY1puJ+PXwP7+fHPRz06Eirsb9ugf6d8kkXav6ADhcODhFFPMIXyxkxSuMf3D6NCFA==
+  dependencies:
+    domelementtype "^2.3.0"
+    domhandler "^5.0.3"
+    domutils "^3.0.1"
+    entities "^4.4.0"
 
 human-signals@^5.0.0:
   version "5.0.0"
@@ -1498,7 +1538,7 @@ vue-router@^4.2.5:
   dependencies:
     "@vue/devtools-api" "^6.5.0"
 
-vue@^3.4.15:
+vue@^3.2.0, vue@^3.4.15:
   version "3.4.15"
   resolved "https://registry.npmjs.org/vue/-/vue-3.4.15.tgz#91f979844ffca9239dff622ba4c79c5d5524b88c"
   integrity sha512-jC0GH4KkWLWJOEQjOpkqU1bQsBwf4R1rsFtw5GQJbjHVKWDzO6P0nWWBTmjp1xSemAioDFj1jdaK1qa3DnMQoQ==
@@ -1508,6 +1548,18 @@ vue@^3.4.15:
     "@vue/runtime-dom" "3.4.15"
     "@vue/server-renderer" "3.4.15"
     "@vue/shared" "3.4.15"
+
+vuepress-plugin-full-text-search2@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.npmjs.org/vuepress-plugin-full-text-search2/-/vuepress-plugin-full-text-search2-0.4.0.tgz#d60c69135512269aa1e7de1a5cc87b9606356632"
+  integrity sha512-/MrCn32tkoGrjguLRBa4+nJfQAFXSPZVx4t6eRsIytlDLQkZogHLr61pyAKkIyIE1J9mUWPWprJzvRwqpQKWpQ==
+  dependencies:
+    "@vuepress/client" "^2.0.0-beta.29"
+    "@vuepress/core" "^2.0.0-0"
+    "@vuepress/utils" "^2.0.0-0"
+    chokidar "^3.5.2"
+    htmlparser2 "^8.0.0"
+    vue "^3.2.0"
 
 vuepress@2.0.0-rc.2:
   version "2.0.0-rc.2"
