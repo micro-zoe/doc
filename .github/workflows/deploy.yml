@@ -2,28 +2,49 @@ name: Deploy Docs
 
 on:
   push:
-    branches: [master]
+    branches:
+      - master
 
 jobs:
-  build-deploy:
+  deploy:
+    name: build-and-deploy
     runs-on: ubuntu-latest
 
     steps:
       # clone 源码到工作流中
-      - uses: actions/checkout@v4
+      - name: clone code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       # 安装 node 环境
-      - uses: actions/setup-node@v4
+      - name: setup node
+        uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: yarn
-      - uses: webfactory/ssh-agent@v0.5.0
+      - name: cache dependencies
+        uses: actions/cache@v3
+        id: yarn-cache
         with:
-          ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-      - name: Build VuePress
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      # 安装依赖
+      - name: install dependencies
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+        run: yarn --frozen-lockfile
+      # 运行构建脚本
+      # - uses: webfactory/ssh-agent@v0.5.0
+      #   with:
+      #     ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
+      # - name: Install dependencies
+      #   run: yarn install --frozen-lockfile
+      - name: run build script
         run: yarn docs:build
-      - name: Deploy
+      # 部署
+      - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           target_branch: gh-pages
