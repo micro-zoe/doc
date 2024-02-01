@@ -1,0 +1,16 @@
+.custom-container.note {
+  border-color: #17a2b8;
+  background-color: var(--c-tip-bg);
+  color: var(--c-tip-text);
+
+  .custom-container-title {
+    color: var(--c-tip-title);
+  }
+}
+
+.custom-container.note {
+  padding: 0.1rem 1.5rem;
+  border-left-width: 0.5rem;
+  border-left-style: solid;
+  margin: 1rem 0;
+}

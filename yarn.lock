@@ -294,6 +294,11 @@
   resolved "https://registry.npmjs.org/@sindresorhus/merge-streams/-/merge-streams-1.0.0.tgz#9cd84cc15bc865a5ca35fcaae198eb899f7b5c90"
   integrity sha512-rUV5WyJrJLoloD4NDN1V1+LDMDWOa4OTsT4yYJwQNpTU6FWxkxHpL7eu4w+DmiH8x/EAM1otkPE1+LaspIbplw==
 
+"@snippetors/vuepress-plugin-code-copy@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.npmjs.org/@snippetors/vuepress-plugin-code-copy/-/vuepress-plugin-code-copy-1.2.3.tgz#4cc5f7ef7530ff6654786f6baa2e15ca4ffb8b14"
+  integrity sha512-PiUbhlYseY4UqsE/ike/Up27GkrbHvR7OJqV5nlmHEW141uWcrVaBZsBS870ckqNF+vd2fk8g4TyoiHvxaUzSg==
+
 "@types/debug@^4.1.12":
   version "4.1.12"
   resolved "https://registry.npmjs.org/@types/debug/-/debug-4.1.12.tgz#a155f21690871953410df4b6b6f53187f0500917"

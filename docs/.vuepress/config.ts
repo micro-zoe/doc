@@ -1,10 +1,10 @@
 import { defineUserConfig } from 'vuepress'
-import type { Plugin } from '@vuepress/core'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { getDirname, path } from '@vuepress/utils'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { containerPlugin } from '@vuepress/plugin-container'
 import fullTextSearchPlugin from 'vuepress-plugin-full-text-search2'
+import codeCopyPlugin from '@snippetors/vuepress-plugin-code-copy'
 import microAppTheme from './theme'
 import { navbar as navbarZh, sidebarZh } from './configs'
 
@@ -32,7 +32,8 @@ export default defineUserConfig({
     repo: 'https://github.com/micro-zoe/micro-app',
 
     /* edit doc */
-    // docsBranch: 'doc',
+    docsRepo: 'https://github.com/CrystalAngelLee/micro-app-docs',
+    docsBranch: 'master',
     docsDir: 'docs',
     /* edit doc */
 
@@ -96,6 +97,12 @@ export default defineUserConfig({
           defaultInfo: 'Note'
         }
       }
+    }),
+    /** @see: https://snippetors.github.io/plugins/vuepress-plugin-code-copy.html */
+    codeCopyPlugin({
+      align: 'top',
+      color: '#3eaf7c',
+      backgroundTransition: false
     })
   ]
 })
