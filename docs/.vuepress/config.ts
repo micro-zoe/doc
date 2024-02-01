@@ -4,7 +4,6 @@ import { viteBundler } from '@vuepress/bundler-vite'
 import { getDirname, path } from '@vuepress/utils'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { containerPlugin } from '@vuepress/plugin-container'
-// import { clipboardPlugin } from 'vuepress-plugin-clipboard'
 import fullTextSearchPlugin from 'vuepress-plugin-full-text-search2'
 import microAppTheme from './theme'
 import { navbar as navbarZh, sidebarZh } from './configs'
@@ -75,11 +74,6 @@ export default defineUserConfig({
     }
   },
   plugins: [
-    // /** @see: https://vuepress.qbb.sh/clipboard/ */
-    // clipboardPlugin({
-    //   staticIcon: true,
-    //   align: 'top',
-    // }) as Plugin,
     registerComponentsPlugin({
       // 组件通过异步方式加载
       components: {

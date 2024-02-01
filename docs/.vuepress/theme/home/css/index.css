@@ -397,7 +397,7 @@ dt {
   width: calc(100% - 90px);
 }
 
-.loading-logo {
+.micro-app-con .loading-logo {
   position: absolute;
   top: 50%;
   left: 50%;

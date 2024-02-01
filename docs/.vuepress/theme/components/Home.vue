@@ -3,15 +3,13 @@ import { computed, onMounted, ref, onBeforeUnmount } from 'vue'
 import {
   usePageFrontmatter,
   useSiteLocaleData,
+  withBase
 } from '@vuepress/client'
 import type { DefaultThemeHomePageFrontmatter } from '@vuepress/theme-default'
-// import MicroAppLoading from '../home/components/microapploading.vue'
+import MicroAppLoading from './MicroAppLoading.vue'
 
 const frontmatter = usePageFrontmatter<DefaultThemeHomePageFrontmatter>()
 const siteLocale = useSiteLocaleData()
-const base = siteLocale.value.base
-
-console.log('base', base)
 
 const heroText = computed(() => {
   if (frontmatter.value.heroText === null) {
@@ -37,69 +35,56 @@ const microAppConOne = ref<HTMLDivElement>()
 const microAppConTwo = ref<HTMLDivElement>()
 
 const showContentOneImg = ref(false)
+const showContentOneApp = ref(false)
 const showContentTwoImg = ref(false)
 const showContentTwoImg2 = ref(false)
+const showContentTwoApp = ref(false)
 const loadingConOne = ref(true)
 const loadingConTwo = ref(true)
 
-
 onMounted(() => {
-  // const observer1 = new IntersectionObserver(([{ intersectionRatio }]) => {
-  //   if (intersectionRatio <= 0) return
-  //   observer1.disconnect()
-  //   showContentOneImg.value = true
+  const observer1 = new IntersectionObserver(([{ intersectionRatio }]) => {
+    if (intersectionRatio <= 0) return
+    observer1.disconnect()
+    showContentOneImg.value = true
 
-  //   setTimeout(() => { loadingConOne.value = false}, 1100)
+    setTimeout(() => { loadingConOne.value = false }, 1100)
 
-  //   // <micro-app-loading size='0.3' class="loading-logo"></micro-app-loading>
-  //   setTimeout(() => {
-  //     const myApp = document.createElement('micro-app')  as HTMLElement
-  //     myApp.setAttribute('name', 'my-app1')
-  //     myApp.setAttribute('disable-memory-router', 'true')
-  //     myApp.setAttribute('url', `https://zeroing.jd.com/micro-app/react17/`)
-  //     myApp.addEventListener('mounted', () => {
-  //       microAppConOne.value?.removeChild(microAppConOne.value.children[0])
-  //     })
-  //     microAppConOne.value?.appendChild(myApp)
-  //   }, 3000)
-  // })
+    setTimeout(() => {
+      showContentOneApp.value = true
+    }, 3000)
+  })
 
-  // observer1.observe(contentOneImg.value as Element)
+  observer1.observe(contentOneImg.value as Element)
 
-  // const observer2 = new IntersectionObserver(([{ intersectionRatio }]) => {
-  //   if (intersectionRatio <= 0) return
-  //   observer2.disconnect()
-  //   showContentTwoImg.value = true
-  // })
+  const observer2 = new IntersectionObserver(([{ intersectionRatio }]) => {
+    if (intersectionRatio <= 0) return
+    observer2.disconnect()
+    showContentTwoImg.value = true
+  })
 
-  // observer2.observe(contentTwoImg1.value as Element)
+  observer2.observe(contentTwoImg1.value as Element)
 
-  // const observer3 = new IntersectionObserver(([{ intersectionRatio }]) => {
-  //   if (intersectionRatio <= 0) return
-  //   observer3.disconnect()
-  //   showContentTwoImg2.value = true
+  const observer3 = new IntersectionObserver(([{ intersectionRatio }]) => {
+    if (intersectionRatio <= 0) return
+    observer3.disconnect()
+    showContentTwoImg2.value = true
 
-  //   setTimeout(() => { loadingConTwo.value = false }, 1100)
+    setTimeout(() => { loadingConTwo.value = false }, 1100)
 
-  //   setTimeout(() => {
-  //     const myApp = document.createElement('micro-app')
-  //     myApp.setAttribute('name', 'my-app2')
-  //     myApp.setAttribute('url', `https://zeroing.jd.com/micro-app/react17/`)
-  //     myApp.setAttribute('disable-memory-router', 'true')
-  //     myApp.addEventListener('mounted', () => {
-  //       microAppConTwo.value?.removeChild(microAppConTwo.value?.children[0])
-  //     })
-  //     microAppConTwo.value?.appendChild(myApp)
-  //   }, 3000);
-  // })
-  // observer3.observe(contentTwoImg2.value as Element)
+    setTimeout(() => {
+      showContentTwoApp.value = true
+    }, 3000);
+  })
+  observer3.observe(contentTwoImg2.value as Element)
 
-  // onBeforeUnmount(() => {
-  //   observer1.disconnect()
-  //   observer2.disconnect()
-  //   observer3.disconnect()
-  // })
+  onBeforeUnmount(() => {
+    observer1.disconnect()
+    observer2.disconnect()
+    observer3.disconnect()
+  })
 })
+
 </script>
 
 <template>
@@ -113,10 +98,10 @@ onMounted(() => {
           </a>
         </div>
         <nav class='header-nav'>
-          <a class='header-nav-title' :href="base + 'zh/'">文档</a>
-          <a class='header-nav-title' :href="base + 'v0/zh/'">0.x文档</a>
+          <a class='header-nav-title' :href="withBase('/zh/')">文档</a>
+          <a class='header-nav-title' :href="withBase('/v0/zh/')">0.x文档</a>
           <a class='header-nav-title' href="https://zeroing.jd.com/micro-app/demo/" target="blank">示例</a>
-          <a class='header-nav-title' :href="base + 'zh/micro-app-devtools'">Micro-App-DevTools</a>
+          <a class='header-nav-title' :href="withBase('/zh/micro-app-devtools')">Micro-App-DevTools</a>
           <a class='header-nav-title' href="https://github.com/micro-zoe/micro-app" target="blank"><img
               class='github-icon' src="../home/assets/github-logo.png" alt="github"></a>
         </nav>
@@ -125,7 +110,7 @@ onMounted(() => {
         <div v-if="heroText" class='introduce-title'>{{ heroText }}</div>
         <p v-if="tagline" class='introduce-desc'>{{ tagline }}</p>
         <div class="introduce-btn-list">
-          <a :href="base + 'zh/'" class='btn-start'>开始使用</a>
+          <a :href="withBase('/zh/')" class='btn-start'>开始使用</a>
           <a href="https://zeroing.jd.com/micro-app/demo/" class='btn-coding' target="blank">在线案例</a>
         </div>
       </section>
@@ -160,7 +145,9 @@ onMounted(() => {
             src="../home/assets/arrow-right.png" alt="">
           <div class='micro-app-con micro-app-con-one' :class="{ 'micro-app-con-show': showContentOneImg }"
             ref="microAppConOne">
-            <!-- <micro-app-loading size='0.3' class="loading-logo" :class="{ hidden: loadingConOne }"></micro-app-loading> -->
+            <micro-app v-if="showContentOneApp" name="my-app1" url="https://zeroing.jd.com/micro-app/react17/"
+              disable-memory-router />
+            <MicroAppLoading v-else class="loading-logo" :size="0.3" :class="{ hidden: loadingConOne }" />
           </div>
         </div>
       </section>
@@ -184,7 +171,9 @@ onMounted(() => {
             src="../home/assets/arrow-right.png" alt="">
           <div class='micro-app-con micro-app-con-two' :class="{ 'micro-app-con-show': showContentTwoImg2 }"
             ref="microAppConTwo">
-            <micro-app-loading size='0.3' class="loading-logo" :class="{ hidden: loadingConTwo }"></micro-app-loading>
+            <micro-app v-if="showContentTwoApp" name="my-app2" url="https://zeroing.jd.com/micro-app/react17/"
+              disable-memory-router />
+            <MicroAppLoading v-else class="loading-logo" :size="0.3" :class="{ hidden: loadingConTwo }" />
           </div>
         </div>
       </section>
@@ -232,7 +221,7 @@ onMounted(() => {
         </div>
       </section>
       <div class="content-thrid-btn">
-        <a :href="base + 'zh/'" class='btn-start'>快速开始</a>
+        <a :href="withBase('/zh/')" class='btn-start'>快速开始</a>
       </div>
     </section>
     <footer class="footer">

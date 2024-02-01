@@ -1,29 +1,41 @@
-<script lang="ts"></script>
 <template>
-    <div class="micro-app-logo">
-        <div class="logo-container">
-            <div class="logo-common-con logo-common-con-left">
-                <div class="logo-common-part-con logo-part-left-con">
-                    <div class="logo-common-part logo-part-left"></div>
+    <div>
+        <div class="micro-app-logo">
+            <div class="logo-container">
+                <div class="logo-common-con logo-common-con-left">
+                    <div class="logo-common-part-con logo-part-left-con">
+                        <div class="logo-common-part logo-part-left"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="logo-common-con logo-common-con-right">
-                <div class="logo-common-part-con logo-part-right-con">
-                    <div class="logo-common-part logo-part-right"></div>
+                <div class="logo-common-con logo-common-con-right">
+                    <div class="logo-common-part-con logo-part-right-con">
+                        <div class="logo-common-part logo-part-right"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="logo-common-con logo-common-con-top">
-                <div class="logo-common-part-con logo-part-top-con">
-                    <div class="logo-common-part logo-part-top"></div>
+                <div class="logo-common-con logo-common-con-top">
+                    <div class="logo-common-part-con logo-part-top-con">
+                        <div class="logo-common-part logo-part-top"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </template>
+<script setup lang="ts">
+import { toRefs } from 'vue'
+const props = defineProps({
+    size: {
+        type: Number,
+        default: 1
+    },
+})
+
+const { size } = toRefs(props)
+</script>
 
 <style scoped>
 .micro-app-logo {
-    --size: 1
+    --size: v-bind(size)
 }
 
 .micro-app-logo {
