@@ -13,9 +13,9 @@ const __dirname = getDirname(import.meta.url)
 export default defineUserConfig({
   lang: 'zh-CN',
   title: 'MicroApp',
-  base: '/micro-app-docs/',
+  base: '/doc/',
   description: '一款简约、高效、功能强大的微前端框架',
-  head: [['link', { rel: 'icon', href: '/micro-app-docs/images/logo.png' }]],
+  head: [['link', { rel: 'icon', href: '/doc/images/logo.png' }]],
   bundler: viteBundler({
     vuePluginOptions: {
       template: {
@@ -32,7 +32,7 @@ export default defineUserConfig({
     repo: 'https://github.com/micro-zoe/micro-app',
 
     /* edit doc */
-    docsRepo: 'https://github.com/CrystalAngelLee/micro-app-docs',
+    docsRepo: 'https://github.com/micro-zoe/doc',
     docsBranch: 'master',
     docsDir: 'docs',
     /* edit doc */
