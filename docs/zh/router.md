@@ -29,10 +29,38 @@ microApp.start({
 })
 ```
 
+**注意：search模式可能会导致Vue主应用循环刷新**
+
+**解决方式：**将router-view或者包含微前端的上层组件中`:key="route.fullPath"`改为`:key="route.path"`或者`:key="route.name"`
+
+**例如：**
+
+```html
+<!-- bad 😭 -->
+<router-view v-slot="{ Component, route }">
+  <transition name="fade">
+    <component :is="Component" :key="route.fullPath" />
+  </transition>
+</router-view>
+
+<!-- good 😊 -->
+<router-view v-slot="{ Component, route }">
+  <transition name="fade">
+    <component :is="Component" :key="route.path" />
+  </transition>
+</router-view>
+
+<!-- bad 😭 -->
+<router-view :key="$route.fullPath"></router-view>
+
+<!-- good 😊 -->
+<router-view :key="$route.path"></router-view>
+```
+
   </TabPanel>
   <TabPanel title='native模式'>
   
-native模式下子应用完全基于浏览器路由系统进行渲染，比search模式拥有更加简洁优雅的的浏览器地址，但相应的需要更加复杂的路由配置，详情参考[browser-router](/zh/browser-router)
+native模式下子应用完全基于浏览器路由系统进行渲染，比search模式拥有更加简洁优雅的的浏览器地址，但相应的需要更加复杂的路由配置，详情参考[native-mode](/zh/native-mode)
 
 **使用方式：**
 
@@ -72,7 +100,7 @@ microApp.start({
   </TabPanel>
   <TabPanel title='pure模式'>
 
-pure模式下子应用独立于浏览器进行渲染，即不会修改浏览器地址，也不会受其影响，其表现和iframe类似。
+pure模式下子应用独立于浏览器进行渲染，即不修改浏览器地址，也不增加路由堆栈，更像是一个组件。
 
 **使用方式：**
 
@@ -404,9 +432,18 @@ window.microApp.router.forward()
 
 ## 设置默认页面
 
-子应用加载后会默认渲染首页，但我们常常希望子应用加载后渲染指定的页面，此时可以设置`defaultPage`指定子应用渲染的页面。
+子应用默认渲染首页，但可以通过设置`defaultPage`渲染指定的页面。
 
-**方式一：设置default-page属性**
+**注意：**
+- 1、defaultPage必须是绝对地址，即目标页面去除域名后的地址
+- 2、hash和search也都要设置到defaultPage
+- 3、由于`native`、`native-scope`模式是基于浏览器进行渲染，`defaultPage`在这两种模式下无效，此时可以通过浏览器url控制子应用渲染的页面。
+
+为了防止`defaultPage`设置错误，建议单独打开子应用，跳转目标页面，复制粘贴浏览器地址，将此值设置为`defaultPage`，也可以去掉域名，让代码看起来更简洁一些。
+
+#### 使用方式
+
+**方式一：通过default-page属性设置**
 ```html
 <micro-app default-page='页面地址'></micro-app>
 ```
