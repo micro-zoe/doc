@@ -129,3 +129,42 @@ microApp.start({
 
   **方式2：** 将文件放到主应用域名下，判断微前端环境下a标签href属性设置为主应用的文件地址
 
+## 10、iconfont 图标冲突了如何处理？
+
+| 产生原因                                        | 解决方案                                                     |
+| ----------------------------------------------- | ------------------------------------------------------------ |
+| 主应用和子应用 unicode 使用同一编码导致图标冲突 | 选择冲突图标，在iconfont中修改对应的unicode编码并重新生成文件进行替换 |
+| 主应用和子应用 class/fontFamily 冲突            | 修改冲突应用下使用iconfont的的相关类名和对应的font-face下fontFamily |
+
+**主应用和子应用 class/fontFamily 冲突 解决示例**
+
+```css
+@font-face {
+-  font-family: "iconfont";
++  font-family: "iconfont1";
+   src: url('iconfont.woff2?t=1704871404008') format('woff2'),
+       url('iconfont.woff?t=1704871404008') format('woff'),
+       url('iconfont.ttf?t=1704871404008') format('truetype');
+}
+
+-.iconfont {
++.iconfont1 {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.right:before {
+  content: "\e7eb";
+}
+```
+
+```html
+- <i className="iconfont right"></i>
++ <i className="iconfont1 right"></i>
+```
+
+
+
