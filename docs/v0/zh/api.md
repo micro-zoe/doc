@@ -217,7 +217,7 @@ import { EventCenterForMicroApp } from '@micro-zoe/micro-app'
 window.eventCenterForAppName = new EventCenterForMicroApp(appName)
 ```
 
-详情查看：[关闭沙箱后的通信方式](/v0/zh/data#关闭沙箱后的通信方式)
+详情查看：[关闭沙箱后的通信方式](./data.md#关闭沙箱后的通信方式)
 
 
 ## unmountApp

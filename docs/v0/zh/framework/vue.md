@@ -279,7 +279,7 @@ export default defineConfig({
 
 **解决方式：** 
 
-  1、关闭样式隔离[disablescopecss](/v0/zh/configure#disablescopecss)
+  1、关闭样式隔离[disablescopecss](./configure.md#disablescopecss)
 
   2、部分组件，如`Select`提供了`popper-append-to-body`配置，用于设置弹框不插入body，可以避免这个问题。如果组件没有提供类似的功能，则暂且只能通过关闭样式隔离解决。 -->
 

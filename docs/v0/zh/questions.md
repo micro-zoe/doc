@@ -39,7 +39,7 @@ micro-app依赖于CustomElements和Proxy两个较新的API。
 - 移动端：ios10+、android5+
 
 ## 4、微应用无法渲染但没有报错
-请检查路由配置是否正确，详情查看[路由](/v0/zh/route)一章，或者[下面第5条：jsonpFunction是否冲突](/v0/zh/questions#_5、webpack-jsonpfunction-冲突导致渲染失败)
+请检查路由配置是否正确，详情查看[路由](./route.md)一章，或者[下面第5条：jsonpFunction是否冲突](./questions.md#_5、webpack-jsonpfunction-冲突导致渲染失败)
 
 ## 5、webpack-jsonpfunction-冲突导致渲染失败
 这种情况常见于多个应用都是通过create-react-app等类似脚手架创建的项目，或一个应用多次重复渲染。
@@ -85,11 +85,11 @@ module.exports = {
 ## 7、vue3的问题
 **1、样式失效**
 
-通过[禁用样式隔离](/v0/zh/configure#disablescopecss)解决。
+通过[禁用样式隔离](./configure.md#disablescopecss)解决。
 
 **2、图片等静态资源无法正常加载**
 
-vue3中需要配置publicPath补全资源路径，详情请查看[publicPath](/v0/zh/static-source#publicpath)
+vue3中需要配置publicPath补全资源路径，详情请查看[publicPath](./static-source.md#publicpath)
 
 
 ## 8、开发环境中渲染angular子应用报错
@@ -193,13 +193,13 @@ microApp.start({
   如果还是报跨域问题，则是服务端做了限制，此时需要撤除上述操作，并将子应用的代理放到基座应用中。
 
 ## 16、子应用多次渲染后内存越来越大
-  参考[内存优化](/v0/zh/advanced#_3、内存优化)一章
+  参考[内存优化](./advanced.md#_3、内存优化)一章
 
 ## 17、子应用之间如何跳转
-  参考[应用之间如何跳转](/v0/zh/route#应用之间如何跳转)一章
+  参考[应用之间如何跳转](./route.md#应用之间如何跳转)一章
 
 ## 18、jsonp请求如何处理？
-  参考[ignore](/v0/zh/configure#ignore忽略元素)
+  参考[ignore](./configure.md#ignore忽略元素)
 
 
 ## 19、子应用通过a标签下载文件失败

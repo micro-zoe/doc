@@ -400,7 +400,7 @@ microApp.clearDataListener('my-app')
 
 当设置了`clear-data`，子应用卸载时会同时清空主应用发送给当前子应用，和当前子应用发送给主应用的数据。
 
-[destroy](/zh/configure#destroy)也有同样的效果。
+[destroy](./configure.md#destroy)也有同样的效果。
 
 #### 方式二：手动清空 - clearData
 ```js

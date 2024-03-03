@@ -66,5 +66,5 @@ devServer: {
 :::note
 1. name：必传参数，必须以字母开头，且不可以带特殊符号(中划线、下划线除外)
 2. url：必传参数，必须指向子应用的index.html，如：http://localhost:3000/ 或 http://localhost:3000/index.html
-3. 子应用必须支持跨域，跨域配置参考[这里](/zh/questions#_2、子应用一定要支持跨域吗)
+3. 子应用必须支持跨域，跨域配置参考[这里](./questions.md#_2、子应用一定要支持跨域吗)
 :::

@@ -43,6 +43,6 @@ microApp.start({
 ```
 
 ::: note
-1. 预加载入参：`disableScopecss`、`disableSandbox` 必须和 `<micro-app>`[配置项](/v0/zh/configure)保持一致。如果产生冲突，以先执行的一方为准。
+1. 预加载入参：`disableScopecss`、`disableSandbox` 必须和 `<micro-app>`[配置项](./configure.md)保持一致。如果产生冲突，以先执行的一方为准。
 2. 如果子应用开启了shadowDOM，则预加载中的`disableScopecss`需要设置为true
 :::
