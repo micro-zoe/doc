@@ -93,7 +93,7 @@ microApp.start({
 ```
 
 ## 8、jsonp请求如何处理？
-  参考[ignore](/zh/configure#ignore-忽略元素)
+  参考[ignore](./configure.md#ignore-忽略元素)
 
 
 ## 9、子应用通过a标签下载文件失败

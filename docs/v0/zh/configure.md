@@ -96,7 +96,7 @@
 
 开启keep-alive后，应用卸载时会进入缓存，而不是销毁它们，以便保留应用的状态和提升重复渲染的性能。
 
-keep-alive的优先级小于[destroy](/v0/zh/configure#destroy)，当两者同时存在时，keep-alive将失效。
+keep-alive的优先级小于[destroy](./configure.md#destroy)，当两者同时存在时，keep-alive将失效。
 
 ## shadowDOM
 - Desc: `是否开启shadowDOM`

@@ -16,7 +16,7 @@
 
 **方式一：执行removeDomScope**
 
-[removeDomScope](/zh/api#removedomscope)方法可以解除元素绑定，通常用于受子应用元素绑定影响，导致主应用元素错误绑定到子应用的情况。
+[removeDomScope](./api.md#removedomscope)方法可以解除元素绑定，通常用于受子应用元素绑定影响，导致主应用元素错误绑定到子应用的情况。
 
 **具体方式如下：**
 <CodeGroup>
