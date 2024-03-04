@@ -99,4 +99,4 @@ shadowDOM具有更好的隔离性，但一些框架(如React)对shadowDOM的兼�
 
 开启shadowDOM后，默认的样式隔离将失效。
 
-开启方式：[shadowDOM](/v0/zh/configure#shadowdom)
+开启方式：[shadowDOM](./configure.md#shadowdom)

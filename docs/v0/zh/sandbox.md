@@ -5,7 +5,7 @@
 
 沙箱是默认开启的，正常情况下不建议关闭，以避免出现不可预知的问题。
 
-如何关闭沙箱请查看：[disableSandbox](/v0/zh/configure#disablesandbox)
+如何关闭沙箱请查看：[disableSandbox](./configure.md#disablesandbox)
 
 ### 注意事项
 

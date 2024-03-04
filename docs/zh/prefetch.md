@@ -65,7 +65,7 @@ microApp.start({
 ```
 
 :::tip
-level或prefetchLevel为3时，预加载子应用的[虚拟路由系统](/zh/router)无法关闭。
+level或prefetchLevel为3时，预加载子应用的[虚拟路由系统](./router.md)无法关闭。
 :::
 
 ### 使用方式

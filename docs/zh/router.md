@@ -60,7 +60,7 @@ microApp.start({
   </TabPanel>
   <TabPanel title='native模式'>
   
-native模式下子应用完全基于浏览器路由系统进行渲染，比search模式拥有更加简洁优雅的的浏览器地址，但相应的需要更加复杂的路由配置，详情参考[native-mode](/zh/native-mode)
+native模式下子应用完全基于浏览器路由系统进行渲染，比search模式拥有更加简洁优雅的的浏览器地址，但相应的需要更加复杂的路由配置，详情参考[native-mode](./native-mode.md)
 
 **使用方式：**
 
@@ -176,7 +176,7 @@ microApp.start({
 2. 子应用控制主应用跳转
 3. 子应用控制其它子应用跳转
 
-由于nextjs的路由系统非常特殊，当子应用是nextjs时无法直接控制跳转，参考[通过数据通信控制跳转](/zh/jump#方式二、通过数据通信控制跳转)
+由于nextjs的路由系统非常特殊，当子应用是nextjs时无法直接控制跳转，参考[通过数据通信控制跳转](./jump.md#方式二、通过数据通信控制跳转)
 
 <Tabs>
   <TabPanel title='主应用'>
