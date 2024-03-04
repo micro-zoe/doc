@@ -221,7 +221,7 @@ micro-app配置如下：
 
 micro-app配置如下：
 
-这就是在[快速开始](/v0/zh/start)一章中提到的案例。
+这就是在[快速开始](./start.md)一章中提到的案例。
 ```html
 <!-- 子应用通过baseroute设置基础路由，路由 /page1 变为 /my-page/page1 -->
 <micro-app url='http://www.xxx.com/index.html' baseroute='/my-page'></micro-app>
